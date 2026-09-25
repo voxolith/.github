@@ -1,0 +1,33 @@
+name: Feature request
+description: Something Voxolith should do that it doesn't.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What you're trying to do
+      description: The use case first, the solution second. What are you building, and where does Voxolith get in the way?
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What you'd suggest
+      description: An API sketch, a mock-up, or a link to how another engine does it.
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Layer
+      description: Your best guess; it's fine to be wrong.
+      options:
+        - renderer (drawing, shaders, file formats)
+        - engine (entities, input, animation, atmosphere, streaming)
+        - generators
+        - an app (viewer, editor, examples, demolition-shot)
+        - not sure
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Contributing
+      options:
+        - label: I'd like to work on this myself.

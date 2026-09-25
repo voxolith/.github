@@ -1,0 +1,52 @@
+name: Bug report
+description: Something renders wrong, crashes, or behaves differently from the docs.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: And what you expected instead. Screenshots help a lot for rendering bugs.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: How to reproduce
+      description: A page URL, a file (attach it or link it), a share code, or steps from a fresh load.
+      placeholder: |
+        1. Open https://voxolith.github.io/viewer/
+        2. Drop the attached .vox
+        3. ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: npm version, commit, or "the live GitHub Pages site on <date>".
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and OS
+      placeholder: Chrome 141 on Fedora 44 (Wayland)
+    validations:
+      required: true
+  - type: input
+    id: gpu
+    attributes:
+      label: GPU
+      description: From chrome://gpu or about:support if unsure. Say if it is a software adapter (SwiftShader, WARP).
+      placeholder: Radeon RX 7800 XT, Mesa 26.1, Vulkan
+  - type: textarea
+    id: console
+    attributes:
+      label: Console output
+      description: Errors or warnings from the browser console, especially WebGPU validation errors.
+      render: text
+  - type: checkboxes
+    id: ai
+    attributes:
+      label: AI assistance
+      options:
+        - label: I used an AI tool to write or analyse this report, and I checked what it says myself.
