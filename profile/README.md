@@ -9,6 +9,10 @@
 grids with coarse occupancy skipping, soft shadows, ambient occlusion and materials, plus
 MagicaVoxel `.vox` and Minecraft `.mca` I/O. It ships as raw TypeScript and compiles with your app.
 
+**[Website and documentation](https://voxolith.github.io/)**: [getting started](https://voxolith.github.io/docs/getting-started/),
+a [tutorial](https://voxolith.github.io/docs/tutorial/), the [manual](https://voxolith.github.io/docs/manual/) and the
+API reference.
+
 | repo | what | try it |
 |---|---|---|
 | [renderer](https://github.com/voxolith/renderer) | the engine, `@voxolith/renderer` on npm | [README](https://github.com/voxolith/renderer#readme) |

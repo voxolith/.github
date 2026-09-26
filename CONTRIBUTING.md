@@ -4,7 +4,9 @@ Thanks for looking. Voxolith is a small project with one maintainer, so the most
 contributions are focused ones: a bug with a clear reproduction, a fix with its reason, an
 example that shows something the engine can already do.
 
-This guide covers every public repo in the organisation. A repo's own README has the details of
+This guide covers every public repo in the organisation. The documentation itself lives at
+[voxolith.github.io/docs](https://voxolith.github.io/docs/) (repo:
+[voxolith.github.io](https://github.com/voxolith/voxolith.github.io)). A repo's own README has the details of
 its package; where it disagrees with this file, the README wins.
 
 ## Where things go
@@ -18,6 +20,7 @@ its package; where it disagrees with this file, the README wins.
 | [editor](https://github.com/voxolith/editor) | voxel editor (early) | the editor app |
 | [examples](https://github.com/voxolith/examples) | example pages | a single example |
 | [demolition-shot](https://github.com/voxolith/demolition-shot) | mobile demolition game | the game |
+| [voxolith.github.io](https://github.com/voxolith/voxolith.github.io) | the website and documentation | docs pages, the tutorial, the site |
 
 Not sure? Open it where you saw the problem; it can be transferred.
 
