@@ -24,7 +24,7 @@ body:
     id: version
     attributes:
       label: Version
-      description: npm version, commit, or "the live GitHub Pages site on <date>".
+      description: Commit, or "the live GitHub Pages site on <date>" (nothing is on npm yet).
   - type: input
     id: browser
     attributes:

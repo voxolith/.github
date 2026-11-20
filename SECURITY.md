@@ -23,13 +23,13 @@ Voxolith runs in the browser and reads files users give it. Things worth reporti
   forever, or read or write outside its buffers;
 - input that hangs or crashes the GPU process (a device loss the page can't recover from);
 - script injection in an app (viewer, editor, examples, demolition-shot);
-- anything in the GitHub workflows or the published npm packages that could let someone push or
-  publish code.
+- anything in the GitHub workflows or the npm packages (none is published yet) that could let
+  someone push or publish code.
 
 A page that is slow on an unusually large but legitimate world is a performance bug; open a
 normal issue.
 
 ## Supported versions
 
-Fixes go into `main` and the next npm release of the affected package. Older releases are not
-patched.
+Fixes go into `main`. Nothing is on npm yet; once packages are, fixes also go into the next
+release of the affected package, and older releases are not patched.

@@ -13,7 +13,7 @@ The `voxolith/.github` repo holds:
   silently override these.
 - Keep CONTRIBUTING's check table in step with what each repo's CI runs. Its job names are
   required checks on `main`: `typecheck` for renderer and engine, `check` for generators, `build`
-  for the apps.
+  for the apps and the site.
 - The lockups come from the private `branding` repo's `dist/`. Replace them from there; don't
   edit them here.
 - The AI policy describes how the project itself is built (AI-assisted, reviewed and run by the
@@ -25,8 +25,10 @@ The `voxolith/.github` repo holds:
   depends on its siblings as `"workspace:*"`. Run `bun install` from that root, never inside a
   repo. [CONTRIBUTING](https://github.com/voxolith/.github/blob/main/CONTRIBUTING.md) lists
   which siblings each repo needs.
-- **Toolchain: bun only.** There is no npm or node step anywhere. It is TypeScript 7 and Vite 8;
-  scripts run `tsc`, `vite` and `bun tools/x.ts`. Use current dependency versions.
+- **Toolchain: bun.** Install and run everything with bun, never npm. Node may be present (it is
+  on GitHub's runners, where the apps' Vite builds run on it), but no script here needs it. It is
+  TypeScript 7 and Vite 8; scripts run `tsc`, `vite` and `bun tools/x.ts`. Use current dependency
+  versions.
 - **`tsconfig.base.json` is byte-identical in every repo**, because consumers compile the
   renderer's and engine's sources under their own flags. Change it everywhere or nowhere.
 - **WebGPU, not WebGL.** Dev servers are HTTPS (`@vitejs/plugin-basic-ssl`), because WebGPU needs a
@@ -51,5 +53,5 @@ The `voxolith/.github` repo holds:
   - Pull requests are squash-merged or rebased; there are no merge commits.
   - Don't push, tag or publish unless asked.
 - **Community files** (CONTRIBUTING with the AI policy, CODE_OF_CONDUCT, SECURITY, templates) live
-  once in `voxolith/.github` and apply org-wide; don't copy them in here.
+  once in `voxolith/.github` and apply org-wide; don't copy them into other repos.
 - **CI's job names are required checks** on `main` (rulesets). Renaming a job breaks merging.

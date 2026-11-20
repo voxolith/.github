@@ -27,8 +27,9 @@ Not sure? Open it where you saw the problem; it can be transferred.
 ## Setting up
 
 Voxolith is several repos that depend on each other as `"workspace:*"`, so they are checked out
-side by side under one bun workspace root. The toolchain is **[bun](https://bun.sh) only**:
-there is no npm or node step anywhere.
+side by side under one bun workspace root. The toolchain is **[bun](https://bun.sh)**: install
+and run everything with it, never npm. No script needs Node, but GitHub's runners have it, so in
+CI Vite runs on Node: anything a `vite.config.ts` imports must load there too.
 
 ```sh
 mkdir voxolith && cd voxolith
@@ -63,6 +64,7 @@ Which siblings a repo needs:
 | generators | renderer, engine |
 | editor, demolition-shot | renderer, engine |
 | viewer, examples | renderer, engine, generators |
+| voxolith.github.io | renderer, engine, generators (keep the folder name `voxolith.github.io`) |
 
 This is the same layout CI builds (see any repo's `.github/workflows/`).
 
@@ -87,7 +89,9 @@ Run the checks for every repo you touched. CI runs the same ones.
 | renderer | `bun run --cwd renderer typecheck` and `bun run --cwd renderer verify` |
 | engine | `bun run --cwd engine typecheck` and `bun run --cwd engine verify` |
 | generators | `bun run --cwd generators typecheck`, `bun run --cwd generators verify` and `bun run --cwd generators/contract full` |
-| apps | `bun run --cwd <app> build` (typechecks too), plus `verify` where the app has one |
+| viewer, editor, examples | `bun run --cwd <app> build` (typechecks too); in viewer, `bun run --cwd viewer gen:samples` first |
+| demolition-shot | `bun run --cwd demolition-shot verify` and `bun run --cwd demolition-shot build` |
+| voxolith.github.io | `bun run --cwd voxolith.github.io typecheck`, then `build` and `links` the same way |
 
 Checks cannot see pixels. If your change affects what is drawn, open it in a WebGPU browser and
 look, and put a before/after screenshot in the pull request.
